@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+     *{margin:0;
+     }
+      .border_box{
+       border:1px solid black;
+       width:200px;
+       height:200px;
+      }
+      .box{
+        display:flex;
+        /* align-items:center; */
+        margin:auto;
+        justify-content:center;
+        width:800px;
+        /* text-align: center; */
+        height:20px;
+        /* border:1px dashed slategrey; */
+      }
+      #timebar{
+        background-color:gray;
+        height:20px;
+        width:0px;
+      }
+      #wrapper{
+        width:auto;
+        height:100vh;
+      }
+    </style>
+  </head>
+  <body id="bgColor">
+    <div class="fontColor" id="wrapper">
+
+    Username : <textarea id="textarea" width="100"></textarea> <button id="adduser">Add User</button>
+    <br>
+    Description : <textarea id="description" width="100"></textarea>
+      <div class="fontColor" id="main"></div>
+      <div class="fontColor" id="side"></div>
+      <div id="timer"></div>
+      <div id="timebar"></div>
+      <div id="collectbtn">lightsout</div>
+    </div>
+    <script type="text/javascript" src="profile_script4.js"></script>
+
+  </body>
+</html>
