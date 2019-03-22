@@ -223,13 +223,15 @@ function addstory(){
               console.log(target.lastChild.previousSibling,'previously selected target');
 
 
+              let jay = document.createElement('div');  // this is test
+              jay.innerHTML = 'jayjay';
 
               // console.log(fadeOut, 'is fadeOut #');
               console.log(counter,'counter');         // for ex, you can create another btn- that leads to this second array
               if(counter >= 3){                               //can swap into diff array like this
-                target.appendChild(elt('div',{class:'box'},storyTwo[counter-3].text));  //bc counter is 3 and need to target array[0]
+                target.parentNode.insertBefore(elt('div',{class:'box'},storyTwo[1].text),target.previousSibling);  //bc counter is 3 and need to target array[0]
               } else{   //put more than one class, create class, give property to class, change opacity according to the counter
-                target.appendChild(elt('div',{class:'box'},storyOne[counter].text));
+                target.parentNode.insertBefore(elt('div',{class:'box'},storyOne[1].text),target.previousSibling);
               }       //, style: `opacity : ${fadeOut}`
 
               // for(eachh of target.childNodes){
@@ -306,7 +308,7 @@ function addstory(){
 
               }
 
-              console.log(target.lastChild.previousSibling.style.opacity,'pre opacity');
+              // console.log(target.lastChild.previousSibling.style.opacity,'pre opacity');
 
 
               if(target.childNodes.length > target.childNodes.length -1){
@@ -345,7 +347,11 @@ function elt(name, attrs, ...children) {
   }
   for (let child of Array.from(children)){
     if(typeof child == "array") {Array.from(child);child.toString()}
-    else {dom.appendChild(document.createTextNode(child));}
+
+    else {console.log(dom,'this is dom');
+    if(dom.parentNode){console.log('yes it exists')}
+    }
+
   }
   // console.log(dom.lastChild.nodeValue)  //lorem
   // setStatus({name:Object.assign({},status.name,{[dom.lastChild.nodeValue]:dom.tagName}),selected:dom.lastChild.nodeValue},dom);
