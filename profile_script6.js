@@ -136,7 +136,7 @@ function setState(newState) {
     ];
 }
 
-
+// bar timer
 function createTimer(duration, display){
     return new Promise((resolve, reject) => {
 
@@ -156,13 +156,14 @@ function createTimer(duration, display){
             } else {
                 reject('error:something wrong');
             }
-        },3000);
+        },1000);
     });
 }// end of createTimer
 createTimer(4, timer).then(addstory);
 
 
-//blink lightsout btn
+
+//lightsout btn blinking
 function blink(){
   let ticks = 0;
   setInterval(()=>{
@@ -181,34 +182,6 @@ blink();
 function addstory(){
 
     collect.addEventListener('click', addon = (event) => {
-
-      // function blinkColor(){
-      //   let blinkbtn = document.getElementById('collectbtn');
-      //   blinkbtn.style.backgroundColor = 'grey';
-      //   if(blinkbtn.style.backgroundColor == 'white'){
-      //     setTimeout(blinkbtn.style.backgroundColor = 'blue',1000);
-      //   } else {
-      //     setTimeout(blinkbtn.style.backgroundColor = 'white',1000);
-      //   }
-      // }
-      // blinkColor();
-
-
-      // function blink(){
-      //   console.log(collect.style.backgroundColor = 'black');
-      //   setTimeout(collect.style.backgroundColor = 'white',100);
-      // }
-      // blink();
-      //
-      // blinkbtn.style.background = 'coral';
-      // if()
-      //
-      //   async function blink() {
-      //     collect.style.backgroundColor = 'gray';
-      //     setTimeout( () => {collect.style.backgroundColor ='white'},200);
-      //   }
-      //   setTimeout(blink,100).then(setTimeout(blink,100));
-
 
         collect.removeEventListener('click', addon);
         let target = event.target;
@@ -230,9 +203,8 @@ function addstory(){
 
                 Promise.resolve(counter++).then(collectNights); // need another collectNights at the end; need both;
 
-
                 fading();
-
+                disarray();
 
                 console.log('current counter is',counter);         // for ex, you can create another btn- that leads to this second array
                 if(counter >= 3) {                               //can swap into diff array like this
@@ -246,11 +218,26 @@ function addstory(){
                 }
         });
 
+          // if(boxes[0]){console.log(boxes[0]);boxes[0].style.position = 'absolute';boxes[0].style.left = 300+'px'}
+
         collectNights();
+
+
+        // ******now need to work on making button appear - then changing story based on input ******
 
         return(target);   //honestly not sure why this is neccessary
     });
 } // end of function addstory
+
+// story disarray
+function disarray() {
+  for(let each of boxes){
+    console.log('each of boxes',each);
+    each.style.position = 'relative';
+    each.style.left = Math.random()*50 + 'px';
+    each.style.marginBottom = Math.random()*20 + 'px';
+  }
+}
 
 
 // story fading
@@ -267,6 +254,8 @@ function fading(){
     if(boxes[8]){boxes[8].style.opacity = 0.2;}
     if(boxes[9]){boxes[9].style.opacity = 0.1;}
 }
+
+
 
 // collect nights with lightsout
 function collectNights(){
