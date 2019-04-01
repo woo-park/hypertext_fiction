@@ -1,0 +1,48 @@
+[
+      {
+        "id" : 1,
+        "text" : "`Next thing ${pick} knows`"
+      },{
+        "id" :2,
+        "text" : "`${pick} is put up in a bunk bed`"
+      },{
+        "id" :3,
+        "text" : "`looking at the ceiling. ${pick} touches the ceiling with hands`"
+      },{
+        "id":4,
+        "text" : "`first time feeling trapped inside`"
+      },{
+        "id":5,
+        "text" : "`digital alarm starts ringing. pitch is getting higher and higher`"
+      },{
+        "id":6,
+        "text" : "`walks down the ladder to turn off the alarm`"
+      },{
+        "id":7,
+        "text" : "`${pick}looks through clothes in suitcase and pick an outfit`"
+      },{
+        "id":8,
+        "text" : "`goes to orientation and meets with other students who are also new to school and states`"
+      },{
+        "id":9,
+        "text" : "`${pick} is in 7th grade`"
+      },{
+        "id":10,
+        "text" : "` `"
+      },{
+        "id":11,
+        "text" : "` `"
+      },{
+        "id":12,
+        "text" : "` `"
+      },{
+        "id":13,
+        "text" : "` `"
+      },{
+        "id":14,
+        "text" : "` `"
+      },{
+        "id":15,
+        "text" : "` `"
+      }
+]

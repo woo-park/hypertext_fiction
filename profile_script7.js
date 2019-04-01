@@ -9,8 +9,8 @@ let selectedname;
 let selectedname_des;
 let pick;
 
-let storyOne;
-let storyTwo;
+let storyOne;   //and this one too
+let storyTwo;   //prob dont need this now
 //
 let collect = document.getElementById('collectbtn');
 let story_box = document.getElementById('story_box');
@@ -42,24 +42,34 @@ hideUser();
 // fetch('http://localhost/drawweb/380/forms/hypertext/hypertext_fiction/story1.json')
 //   .then(response => response.json())
 //   .then(json => console.log(json));
-let new_array = [];
+let story_one = [];
+let story_one_id = [];
+let story_two = [];
   //
   fetch('story1.json')
     .then(response => response.json())
     // .then(json => console.log(json))
     .then(json => findText(json));
 
+  fetch('story2.json')
+    .then(response => response.json())
+    .then(json => findText2(json));
+
 function findText(json){
   for(each of json){
-    new_array.push(each.text);
-
-    // console.log(JSON.stringify(new_array));
-
-    // return new_array;
+    story_one.push(each.text);
+    story_one_id.push(each.id);
+    // console.log(JSON.stringify(story_one));
+    // return story_one;
   }
-  console.log(new_array);
-
-  return new_array;
+  console.log(story_one);
+  return story_one;
+}
+function findText2(json){
+  for(each of json){
+    story_two.push(each.text);
+  }
+  return story_two;
 }
 //
   // fetch("http://localhost/drawweb/380/forms/hypertext/hypertext_fiction/story1.json")
@@ -109,67 +119,6 @@ function setState(newState) {
    // chosen_name = chosen.lastChild.textContent;
    // console.log(`${chosen} is chosen`);
     }
-
-   storyOne = [
-         {
-           id : 1,
-           text : `Next thing ${pick} knows`
-         },{
-           id :2,
-           text : `${pick} is put up in a bunk bed`
-         },{
-           id :3,
-           text : `looking at the ceiling. ${pick} touches the ceiling with hands`
-         },{
-           id:4,
-           text : `first time feeling trapped inside`
-         },{
-           id:5,
-           text : `digital alarm starts ringing. pitch is getting higher and higher`
-         },{
-           id:6,
-           text : `walks down the ladder to turn off the alarm`
-         },{
-           id:7,
-           text : `${selectedname}looks through clothes in suitcase and pick an outfit`
-         },{
-           id:8,
-           text : `goes to orientation and meets with other students who are also new to school and states`
-         },{
-           id:9,
-           text : `${selectedname} is in 7th grade`
-         },{
-           id:10,
-           text : ``
-         }
-   ];
-
-   storyTwo = [
-        {
-         id : 1,
-         text: `context2 line 1`
-        },
-        {
-         id : 2,
-         text: `context2 line 2`
-        },
-        {
-         id : 3,
-         text: `context2 line 3`
-        },
-        {
-         id : 4,
-         text: `context2 line 4`
-        },
-        {
-         id : 5,
-         text: `context2 line 5`
-        },
-        {
-         id : 6,
-         text: `context2 line 6`
-        }
-    ];
 }
 
 // bar timer
@@ -221,7 +170,7 @@ function addstory(){
 
         collect.removeEventListener('click', addon);
         let target = event.target;
-        story_box.insertBefore(elt('div',{class:'box'}, storyOne[counter].text),story_box.firstChild);
+        story_box.insertBefore(elt('div',{class:'box'}, eval(story_one[counter])),story_box.firstChild);
         target.addEventListener('click',()=>{
 
             event.stopPropagation();
@@ -254,12 +203,12 @@ function addstory(){
                   }
 
                 }
-                console.log(eval(new_array[counter]),'parsing');  //dont need this because i used eval() instead
+                console.log(eval(story_one[counter]),'parsing');  //dont need this because i used eval() instead
                 console.log('current counter is',counter);         // for ex, you can create another btn- that leads to this second array
-                if(counter >= 3) {                               //can swap into diff array like this
-                    story_box.insertBefore(elt('div',{class:'box'},storyTwo[counter-3].text),story_box.firstChild);  //bc counter is 3 and need to target array[0]
+                if(counter >= 3 && counter <= 10) {                               //can swap into diff array like this
+                    story_box.insertBefore(elt('div',{class:'box'},eval(story_two[counter-3])),story_box.firstChild);  //bc counter is 3 and need to target array[0]
                 } else {   //put more than one class, create class, give property to class, change opacity according to the counter
-                    story_box.insertBefore(elt('div',{class:'box'},eval(new_array[counter])),story_box.firstChild);
+                    story_box.insertBefore(elt('div',{class:'box'},eval(story_one[counter])),story_box.firstChild);
                 }
 
             } else if(!waited) {
@@ -269,7 +218,9 @@ function addstory(){
                 console.log(` have you waited? : ${waited}`);
             }
 
-                // story_box.insertBefore(elt('div',{class:'box'},eval(new_array[counter])),story_box.firstChild);
+            console.log(story_one_id,'story1id');
+            console.log(story_one_id.length);
+                // story_box.insertBefore(elt('div',{class:'box'},eval(story_one[counter])),story_box.firstChild);
 
         });
 
@@ -277,7 +228,9 @@ function addstory(){
 
         collectNights();
 
-
+        // if(counter >= 3){
+        //   console.log('lets pop up button');
+        // }
         // ******now need to work on making button appear - then changing story based on input ******
 
         return(target);   //honestly not sure why this is neccessary
