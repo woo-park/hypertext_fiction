@@ -28,6 +28,9 @@ let sides = document.getElementById('side');
 let add_button = document.getElementById('adduser');
 let username = document.getElementById('username');
 
+let sides2 = document.getElementById('side2');
+let activity_count = 0;
+
 function hideUser(){
   add_button.addEventListener('click',() => {
     username.style.display = 'none';
@@ -134,7 +137,7 @@ function createTimer(duration, display){
 
             if(!error) {
                 seconds = seconds < 10 ? "0" + seconds : seconds;
-                --duration < 0 ? (duration = Math.floor(Math.random()*2), waited = true,bar.style.width = seconds * 10 +"px") : (duration, waited = false, bar.style.width = seconds * 10 +"px");
+                --duration < 0 ? (duration = Math.floor(Math.random()*4), waited = true,bar.style.width = seconds * 10 +"px") : (duration, waited = false, bar.style.width = seconds * 10 +"px");
                 display.textContent = seconds + " seconds left";
 
                 resolve(waited);
@@ -203,6 +206,8 @@ function addstory(){
                   }
 
                 }
+               
+
                 console.log(eval(story_one[counter]),'parsing');  //dont need this because i used eval() instead
                 console.log('current counter is',counter);         // for ex, you can create another btn- that leads to this second array
                 if(counter >= 3 && counter <= 4) {                               //can swap into diff array like this
@@ -210,6 +215,57 @@ function addstory(){
                 } else {   //put more than one class, create class, give property to class, change opacity according to the counter
                     story_box.insertBefore(elt('div',{class:'box'},eval(story_one[counter])),story_box.firstChild);
                 }
+                 // function emit(){
+                //   if(counter == 2) {
+                //     let wrapper = document.getElementById('wrapper');
+                //     // let sides2;
+                    
+                //     addbtn = elt2('div', {onclick: () => {activity(sides2, activity_count); activity_count++;}}, 'activity');
+                //     // sides.appendChild(sides2);
+                //     // console.log(sides2);
+                //     wrapper.appendChild(addbtn);
+                
+                //   }
+                // }
+
+                let sides3 = document.getElementById('side3');
+                let sides4 = document.getElementById('side4');
+                let emit_name;
+                emit(2, sides2, activity_count, 'activity');
+                emit(3, sides3, activity_count, 'language');
+                emit(4, sides4, activity_count, 'jays');
+                
+                
+                
+                function emit(emit_number, holder, counting, emit_name) {
+                  if(counter == emit_number) {
+
+                    let addbtn = elt2('a', {onclick: () => {activity(holder, counting, emit_name); if(waited == true){counting++; blink(addbtn)}}}, emit_name);
+                    wrapper.appendChild(addbtn);
+                  }
+                }
+                function activity(holder, counting, emit_name) {
+                  holder.textContent = emit_name +` ${counting}`;
+                  console.log(holder);
+                }
+                // function activity() {
+                //   sides2.innerHTML = `aybayby ${activity_count}`;
+                //   console.log(sides2);
+                // }
+                //lightsout btn blinking
+                function blink(addbtn){
+                  let ticks = 0;
+                  if(waited == true){
+                    setInterval(()=>{
+                      if(ticks <= 3) {ticks++;} // console.log('ticks',ticks);
+                      addbtn.style.border = '0px dashed black';
+                      if(ticks%2){
+                          addbtn.style.border = '1px dashed black';
+                      }
+                    },100);   //do i need to clearinterval at somepoint?
+                  }
+                }
+
 
             } else if(!waited) {
 
@@ -227,6 +283,7 @@ function addstory(){
           // if(boxes[0]){console.log(boxes[0]);boxes[0].style.position = 'absolute';boxes[0].style.left = 300+'px'}
 
         collectNights();
+        
 
         // if(counter >= 3){
         //   console.log('lets pop up button');
@@ -236,6 +293,19 @@ function addstory(){
         return(target);   //honestly not sure why this is neccessary
     });
 } // end of function addstory
+
+
+
+function elt2(type, props, ...children){
+  let domtree = document.createElement(type);
+  if (props) Object.assign(domtree, props);
+  for (let child of children) {
+    if (typeof child != 'string') domtree.appendChild(child);
+    else domtree.appendChild(document.createTextNode(child));
+  }
+  return domtree;
+}
+
 
 // story disarray
 function disarray() {
@@ -270,6 +340,7 @@ function collectNights(){
     let nights = story_box.childNodes.length;
     sides.textContent = `collected : ${nights} nights`;
 }
+
 
 // elt ( "span", {class : "border_box"}, "lorem");
 function elt(name, attrs, ...children) {
