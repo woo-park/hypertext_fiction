@@ -28,21 +28,122 @@
         "text" : "`${pick} is in 7th grade`"
       },{
         "id":10,
-        "text" : "` `"
+        "text" : "`in this new place, new environment, new house`"
       },{
         "id":11,
-        "text" : "` `"
+        "text" : "`${pick} must get along with others and make this place home`"
       },{
         "id":12,
-        "text" : "` `"
+        "text" : "`thrown into this new world`"
       },{
         "id":13,
-        "text" : "` `"
+        "text" : "`${pick} might like it`"
       },{
         "id":14,
+        "text" : "`${pick} might love it`"
+      },{
+        "id":15,
+        "text" : "`${pick} might hate it`"
+      },{
+        "id":15,
+        "text" : "`because ${pick} is now part of the community, ${pick} is required to do anything the school asks for`"
+      },{
+        "id":15,
+        "text" : "`${pick} is not alone,`"
+      },{
+        "id":15,
+        "text" : "`but definitely feels alone`"
+      },{
+        "id":15,
+        "text" : "`the white wooden fence keeps ${pick} inside the school`"
+      },{
+        "id":15,
+        "text" : "`its everywhere`"
+      },{
+        "id":15,
+        "text" : "`fences are not tall, but they have sharp, pointy top`"
+      },{
+        "id":15,
+        "text" : "` `"
+      },{
+        "id":15,
+        "text" : "`Someone asks, do you translate when you hear English? Or do you understand it right away?`"
+      },{
+        "id":15,
+        "text" : "`${pick} says, ‘I don’t know’`"
+      },{
+        "id":15,
+        "text" : "`one asks again, well then do you think in English or in Korean?`"
+      },{
+        "id":15,
+        "text" : "`And ${pick} replies, I just speak English`"
+      },{
+        "id":15,
+        "text" : "`${pick} thinks, - maybe not perfect english -`"
+      },{
+        "id":15,
+        "text" : "` `"
+      },{
+        "id":15,
+        "text" : "`${pick} goes to American history class`"
+      },{
+        "id":15,
+        "text" : "`${pick} has a quiz today`"
+      },{
+        "id":15,
+        "text" : "`the quiz is on the current event that was discussed during class`"
+      },{
+        "id":15,
+        "text" : "`fails it miserably`"
+      },{
+        "id":15,
+        "text" : "`${pick} doesn’t know what to tell to parents because everyone else seems to be doing fine`"
+      },{
+        "id":15,
+        "text" : "`maybe ${pick} is not the brightest kid afterall`"
+      },{
+        "id":15,
+        "text" : "` `"
+      },{
+        "id":15,
+        "text" : "`It’s a break time`"
+      },{
+        "id":15,
+        "text" : "`${pick} sees other kids going outside. ${pick} looks out the window from the second floor. `"
+      },{
+        "id":15,
+        "text" : "`${pick}'s never seen a grass field large as this`"
+      },{
+        "id":15,
+        "text" : "`${pick} thinks -i will stick out even more if i go out there -`"
+      },{
+        "id":15,
+        "text" : "`other kids are playing touch football and basketball on mini hoop.`"
+      },{
+        "id":15,
+        "text" : "`as of now, ${pick} doesn’t have a friend to talk to during a break.`"
+      },{
+        "id":15,
+        "text" : "`${pick} is not sure what to do, but just stare out the window. And ${pick} wonders what are the rules for football`"
+      },{
+        "id":15,
+        "text" : "` `"
+      },{
+        "id":15,
+        "text" : "`people think ${pick} is a very shy kid`"
+      },{
+        "id":15,
+        "text" : "`${pick} is shy because ${pick} doesn’t know what to say to others and how to approach to others.`"
+      },{
+        "id":15,
+        "text" : "` `"
+      },{
+        "id":15,
         "text" : "` `"
       },{
         "id":15,
         "text" : "` `"
       }
+
+
 ]

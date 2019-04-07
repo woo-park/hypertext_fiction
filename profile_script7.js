@@ -205,7 +205,7 @@ function addstory(){
                 }
                 console.log(eval(story_one[counter]),'parsing');  //dont need this because i used eval() instead
                 console.log('current counter is',counter);         // for ex, you can create another btn- that leads to this second array
-                if(counter >= 3 && counter <= 10) {                               //can swap into diff array like this
+                if(counter >= 3 && counter <= 4) {                               //can swap into diff array like this
                     story_box.insertBefore(elt('div',{class:'box'},eval(story_two[counter-3])),story_box.firstChild);  //bc counter is 3 and need to target array[0]
                 } else {   //put more than one class, create class, give property to class, change opacity according to the counter
                     story_box.insertBefore(elt('div',{class:'box'},eval(story_one[counter])),story_box.firstChild);
