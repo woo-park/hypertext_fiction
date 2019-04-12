@@ -1,33 +1,130 @@
 [
       {
         "id" : 1,
-        "text" :  "`2 `"
+        "text" :  "`${pick} lays down. `"
       },{
         "id" :2,
-        "text" :  "`2 `"
+        "text" :  "`within a minute the lights are off and ${pick} feels the stiffness of the floor`"
       },{
         "id" :3,
-        "text" :  "`2 `"
+        "text" :  "`it's hard to call it a mattress since it's only 3 inches thick, around 30 inches wide, and it barely has any padding.`"
       },{
         "id":4,
-        "text" :  "` `"
+        "text" :  "`looking at it, ${pick} wonders how long this thing has been used for.`"
       },{
         "id":5,
-        "text" :  "` `"
+        "text" :  "`at least five years..`"
       },{
         "id":6,
-        "text" :  "` `"
+        "text" :  "`but that doesn't matter because ${pick} knows that there is no turning back`"
       },{
         "id":7,
-        "text" :  "` `"
+        "text" :  "`just need to get used to it`"
       },{
         "id":8,
-        "text" :  "` `"
+        "text" :  "`${pick} doesn't move a single inch because it will just make it even more uncomfortable`"
       },{
         "id":9,
+        "text" :  "`stays fixed with arms aligned next to the body`"
+      },{
+        "id":10,
+        "text" :  "`lights have been off for an hour now, but the moonlight seeps in through the window.`"
+      },{
+        "id":10,
+        "text" :  "`closes eyse and wonder, 'why am mi here?'`"
+      },{
+        "id":10,
+        "text" :  "`now it's pitch black, and memories flood into the pitch black vision.`"
+      },{
+        "id":10,
+        "text" :  "` `"
+      },{
+        "id":10,
+        "text" :  "`it's ${pick}'s first day in the military. ${pick} just spent the first night in the training facility before getting drafted into a differnt base`"
+      },{
+        "id":10,
+        "text" :  "`luckily? ${pick} is placed in a room with 12 other kids. the roomms are usually filled with 20 kids.`"
+      },{
+        "id":10,
+        "text" :  "`it's the first time since 6th grade that ${pick}'s been surrounded by the Korean kids`"
+      },{
+        "id":10,
+        "text" :  "`the day has begun. everyone finally introduced themselves to one another.`"
+      },{
+        "id":10,
+        "text" :  "` `"
+      },{
+        "id":10,
+        "text" :  "`this is probably the first time ${pick} realized that ${pick} is not American.`"
+      },{
+        "id":10,
+        "text" :  "`the fact that ${pick} is here, serving in the Korean military states that ${pick} is Korean.`"
+      },{
+        "id":10,
+        "text" :  "`${pick} thinks, 'how longer do i have to spend more time in the u.s. to become one of them?' `"
+      },{
+        "id":10,
+        "text" :  "`there is a saying that 'within ten years, even the mountains and rives change their forms.' `"
+      },{
+        "id":10,
+        "text" :  "`yet, time spent in the states did not much for ${pick}`"
+      },{
+        "id":10,
+        "text" :  "` `"
+      },{
+        "id":10,
+        "text" :  "`the more ${pick} talked to the peers in the millitary, ${pick} began to realize that ${pick} has nothing in common with them`"
+      },{
+        "id":10,
+        "text" :  "`${pick} feels as if ${pick} is back in 7th all over agin.`"
+      },{
+        "id":10,
+        "text" :  "`after figuring out that ${pick}'s been abroad, they began to ask questions.`"
+      },{
+        "id":10,
+        "text" :  "`'why are you here?' `"
+      },{
+        "id":10,
+        "text" :  "`'couldn't you have avoided coming here? `"
+      },{
+        "id":10,
+        "text" :  "`perhaps. but then ${pick} will really have no place to go `"
+      },{
+        "id":10,
+        "text" :  "`as days passed, they began to treat ${pick} as a foreigner.`"
+      },{
+        "id":10,
+        "text" :  "`it was both true and false.`"
+      },{
+        "id":10,
+        "text" :  "``"
+      },{
+        "id":10,
+        "text" :  "`when we had what's known as 'free' times, 12 of us sat on the pedestal and talked. `"
+      },{
+        "id":10,
+        "text" :  "`the pedestal is also where we unfold the thin mattresses and sleep.`"
+      },{
+        "id":10,
+        "text" :  "`But interestingly, whenever they were laughing, ${pick} couldn't understand what was so funny. `"
+      },{
+        "id":10,
+        "text" :  "`despite ${pick} fluent in korean, ${pick} couldn't understand the jokes. `"
+      },{
+        "id":10,
+        "text" :  "`the worst part was that ${pick} couldn't memorize everyone's name even after 2 weeks has been passed.`"
+      },{
+        "id":10,
+        "text" :  "` `"
+      },{
+        "id":10,
+        "text" :  "` `"
+      },{
+        "id":10,
         "text" :  "` `"
       },{
         "id":10,
         "text" :  "` `"
       }
+      
 ]

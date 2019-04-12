@@ -130,19 +130,67 @@
         "text" : "` `"
       },{
         "id":15,
-        "text" : "`people think ${pick} is a very shy kid`"
+        "text" : "`people think ${pick} is a shy`"
       },{
         "id":15,
-        "text" : "`${pick} is shy because ${pick} doesn’t know what to say to others and how to approach to others.`"
+        "text" : "`${pick} is not shy. it's just taking a while for ${pick} to adjust to the environmment.`"
       },{
         "id":15,
-        "text" : "` `"
+        "text" : "`it's break time again.`"
       },{
         "id":15,
-        "text" : "` `"
+        "text" : "`${pick} misses talking to old friends. so ${pick} goes on a computer.`"
       },{
         "id":15,
-        "text" : "` `"
+        "text" : "`${pick} tries to go on a Korean portal to use Korean email account. `"
+      },{
+        "id":15,
+        "text" : "`however, except for some english words, all the characters are broken.`"
+      },{
+        "id":15,
+        "text" : "` '@#@23!$%4!@@!#!#@!@#!@#@!'`"
+      },{
+        "id":15,
+        "text" : "`so ${pick} goes on another korean portal and then types the korean character in english.`"
+      },{
+        "id":15,
+        "text" : "`'wkfwlso?'`"
+      },{
+        "id":15,
+        "text" : "`on the bottom of the page, the portal asks if ${pick} meant to say '잘지내?' `"
+      },{
+        "id":15,
+        "text" : "`it means 'how are you?' in korean`"
+      },{
+        "id":15,
+        "text" : "`finally ${pick} can send an email to an old friend with a little bit of hack`"
+      },{
+        "id":15,
+        "text" : "``"
+      },{
+        "id":15,
+        "text" : "`after school, before going to bed, ${pick} can use the cord-less home phone `"
+      },{
+        "id":15,
+        "text" : "`but ${pick} needs to take turns when using a phone.`"
+      },{
+        "id":15,
+        "text" : "`time is limited to 30 minutes since there are momre than 15 kids to share the phone.`"
+      },{
+        "id":15,
+        "text" : "``"
+      },{
+        "id":15,
+        "text" : "`${pick} recieves an email fromm korea. he feels alive.`"
+      },{
+        "id":15,
+        "text" : "`every day, after school and sports, ${pick} sees 'friends' getting picked up by the drive way`"
+      },{
+        "id":15,
+        "text" : "`${pick} wonders what they might do when they return home`"
+      },{
+        "id":15,
+        "text" : "``"
       }
 
 
