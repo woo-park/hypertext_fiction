@@ -156,8 +156,11 @@ function blink(){
   let ticks = 0;
   setInterval(()=>{
     if(ticks <= 9) {ticks++;} // console.log('ticks',ticks);
+    collect.style.boxSizing = `border-box`;
     collect.style.border = '0px dashed black';
+    
     if(ticks%2){
+      collect.style.boxSizing = `border-box`;
         collect.style.border = '1px dashed black';
     }
   },400);   //do i need to clearinterval at somepoint?
@@ -179,7 +182,7 @@ function addstory(){
             event.stopPropagation();
 
             if(waited){
-                let bgColor = document.getElementById('wrapper');
+                let bgColor = document.getElementById('bgColor');
                 Promise.resolve(
                     setTimeout(()=>{bgColor.style.backgroundColor = 'black';},100)
                 ).then(
@@ -190,7 +193,8 @@ function addstory(){
                 collect.removeEventListener('click', addon);  //hm it works without this
 
                 Promise.resolve(counter++).then(collectNights); // need another collectNights at the end; need both;
-
+                console.log('# of counter',counter);
+                  
                 fading();
                 disarray();
                 //hm i can create a button div and then continuosly append btn on to this div
@@ -211,9 +215,9 @@ function addstory(){
                 console.log(eval(story_one[counter]),'parsing');  //dont need this because i used eval() instead
                 console.log('current counter is',counter);         // for ex, you can create another btn- that leads to this second array
                 if(counter >= 3 && counter <= 4) {                               //can swap into diff array like this
-                    story_box.insertBefore(elt('div',{class:'box'},eval(story_two[counter-3])),story_box.firstChild);  //bc counter is 3 and need to target array[0]
+                    story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_two[counter-3])),story_box.firstChild);  //bc counter is 3 and need to target array[0]
                 } else {   //put more than one class, create class, give property to class, change opacity according to the counter
-                    story_box.insertBefore(elt('div',{class:'box'},eval(story_one[counter])),story_box.firstChild);
+                    story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_one[counter])),story_box.firstChild);
                 }
                  // function emit(){
                 //   if(counter == 2) {
@@ -230,28 +234,72 @@ function addstory(){
 
                 let sides3 = document.getElementById('side3');
                 let sides4 = document.getElementById('side4');
+                let sides5 = document.getElementById('side5');
+                let sides6 = document.getElementById('side6');// not used at the moment
+                let sides7 = document.getElementById('side7');
+                let sides8 = document.getElementById('side8');
+                let sides9 = document.getElementById('side9');
+
                 let emit_name;
                 emit(2, sides2, activity_count, 'activity');
                 emit(3, sides3, activity_count, 'language');
-                emit(4, sides4, activity_count, 'jays');
-                
+                emit(4, sides4, activity_count, 'sports');
+                emit(5, sides5, activity_count, 'friends');
+
                 
                 
                 function emit(emit_number, holder, counting, emit_name) {
+                 
                   if(counter == emit_number) {
-
-                    let addbtn = elt2('a', {onclick: () => {activity(holder, counting, emit_name); if(waited == true){counting++; blink(addbtn)}}}, emit_name);
-                    wrapper.appendChild(addbtn);
+                    let addbtn;
+                    if(waited == true){
+                      addbtn = elt2('a', {onclick: () => {
+                        bgBlack(addbtn);
+                        
+                        if(waited == true){counting ++;
+                          console.log('WAITED AND ON CLICKKKK');
+                          holder.textContent = `${emit_name} : ${counting}`;
+                          bgBlack(holder);
+                        }
+                        
+                        let bonus_at = 7;
+                        bonus(bonus_at);
+                        function bonus(bonus_at){
+                          if(counter >= bonus_at) {
+                            counting += 10; //or make it random
+                          }
+                        }
+ 
+                      }}, emit_name);
+                      wrapper.appendChild(addbtn);
+                    }    
                   }
                 }
-                function activity(holder, counting, emit_name) {
-                  holder.textContent = emit_name +` ${counting}`;
-                  console.log(holder);
-                }
+                
+                  
+                
+                
+                
+
+                
+                
+                
                 // function activity() {
                 //   sides2.innerHTML = `aybayby ${activity_count}`;
                 //   console.log(sides2);
                 // }
+
+             
+                // //tradeoff compensation
+                // function trade() {
+                //   if(counter == 10) {
+                //     console.log('add 10 to all');
+                //     console.log(sides2,'sides2');
+
+                //   }
+                // }
+
+
                 //lightsout btn blinking
                 function blink(addbtn){
                   let ticks = 0;
@@ -265,6 +313,27 @@ function addstory(){
                     },100);   //do i need to clearinterval at somepoint?
                   }
                 }
+
+                // background black
+                function bgBlack(addbtn){
+                  let ticks = 0;
+                  if(waited == true){
+                    setInterval(()=>{
+                      if(ticks <= 3) {ticks++;} // console.log('ticks',ticks);
+                      addbtn.style.backgroundColor = 'white';
+                      addbtn.style.opacity = '1';
+                      addbtn.style.backgroundColor = 'inherit'; //sick
+                      if(ticks%2){
+                          addbtn.style.backgroundColor = 'black';
+                          addbtn.style.opacity = '0.7';
+                      }
+                    },100);   //do i need to clearinterval at somepoint?
+                  }
+                }
+                
+
+               
+
 
 
             } else if(!waited) {
@@ -283,6 +352,7 @@ function addstory(){
           // if(boxes[0]){console.log(boxes[0]);boxes[0].style.position = 'absolute';boxes[0].style.left = 300+'px'}
 
         collectNights();
+       
         
 
         // if(counter >= 3){
@@ -339,6 +409,7 @@ function fading(){
 function collectNights(){
     let nights = story_box.childNodes.length;
     sides.textContent = `collected : ${nights} nights`;
+    console.log('# of nights', nights);
 }
 
 

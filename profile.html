@@ -33,17 +33,47 @@
       #wrapper{
         width:auto;
         height:100vh;
+        
+      }
+      body{
+        transition: all 300ms ease-in-out;
       }
       #collectbtn{
         width:60px;
       }
+      .textwidth{
+        width:max-content;
+        
+        /* display:inline-block; */
+      }
+      *{background-color:inherit;
+        
+      }
+      input {
+        
+        /* border:1px solid black; */
+        /* border-bottom:1px solid black; */
+        /* border-radius: 4px; */
+        box-sizing: content-box;
+        text-align: center;
+        border-color:black;
+        /* border-radius:4px; */
+        
+      }
+      button{
+        /* border:none; */
+        /* border:1px solid black; */
+        border-radius:20px;
+      }
+
     </style>
   </head>
   <body id="bgColor">
     <div class="fontColor" id="wrapper">
 
       <div id="username">
-        Username : <textarea id="textarea" width="100"></textarea> <button id="adduser">Add User</button>
+        Username : <input id="textarea" type="text"></input>
+        <button id="adduser">Add User</button>
         <br><textarea style='display:none' id="description" width="100"></textarea>
       </div>
 
@@ -51,10 +81,15 @@
       <div id="side" class="night">
        
       </div>
-      <div id="side2" class="activity"></div>
-      <div id="side3" class="language"></div>
-      <div id="side4" class=""></div>
-      <div id="side5" class=""></div>
+      <div id="side2" class="textwidth activity"></div>
+      <div id="side3" class="textwidth language"></div>
+      <div id="side4" class="textwidth"></div>
+      <div id="side5" class="textwidth"></div>
+      <div id="side6" class="textwidth"></div>
+      <div id="side7" class="textwidth"></div>
+      <div id="side8" class="textwidth"></div>
+      <div id="side9" class="textwidth"></div>
+
    
       <div id="timer"></div>
       <div id="timebar"></div>
