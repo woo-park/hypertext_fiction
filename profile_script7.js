@@ -31,6 +31,9 @@ let username = document.getElementById('username');
 let sides2 = document.getElementById('side2');
 let activity_count = 0;
 
+let right_sidebar = document.getElementById('right_sidebar');
+let left_sidebar = document.getElementById('left_sidebar');
+
 function hideUser(){
   add_button.addEventListener('click',() => {
     username.style.display = 'none';
@@ -171,7 +174,7 @@ blink();
 // click; addstory; collectnights
 
 function addstory(){
-
+    collect.style.cursor ='pointer';
     collect.addEventListener('click', addon = (event) => {
 
         collect.removeEventListener('click', addon);
@@ -198,24 +201,34 @@ function addstory(){
                 fading();
                 disarray();
                 //hm i can create a button div and then continuosly append btn on to this div
-                if(counter >= 7) {
-                  let newbtn = document.createElement('div');
-                  let newbtn_text = document.createTextNode('Where are you from?');
-                  let wrapper = document.getElementById('wrapper');
+                // if(counter % 7) {
+                //   let newbtn = document.createElement('div');
+                //   let newbtn_text = document.createTextNode('Where are you from?');
+                //   // let wrapper = document.getElementById('wrapper');
+                  
 
-                  wrapper.appendChild(newbtn);
-                  newbtn.appendChild(newbtn_text);
-                  if(document.lastChild = newbtn){
-                    console.log('yes last child is new btn');
+                //   left_sidebar.appendChild(newbtn);
+                //   newbtn.appendChild(newbtn_text);
+                //   if(document.lastChild = newbtn){
+                //     console.log('yes last child is new btn');
+                //   }
+                // }
+                randomPopups();
+                function randomPopups() {
+                  if (counter > 7){
+                    left_sidebar.appendChild(elt('div',{class:'textwidth'}, 'where are you from?'));
+
+                    // story_box.insertBefore(elt('div',{class:'box'}, eval(story_one[counter])),story_box.firstChild);
+
                   }
-
                 }
                
 
                 console.log(eval(story_one[counter]),'parsing');  //dont need this because i used eval() instead
                 console.log('current counter is',counter);         // for ex, you can create another btn- that leads to this second array
-                if(counter >= 3 && counter <= 4) {                               //can swap into diff array like this
-                    story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_two[counter-3])),story_box.firstChild);  //bc counter is 3 and need to target array[0]
+                // if(counter >= 3 && counter <= 4) {  
+                if(counter >= 63 && counter <= 64) {                               //can swap into diff array like this
+                    story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_two[counter-63])),story_box.firstChild);  //bc counter is 3 and need to target array[0]
                 } else {   //put more than one class, create class, give property to class, change opacity according to the counter
                     story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_one[counter])),story_box.firstChild);
                 }
@@ -241,10 +254,10 @@ function addstory(){
                 let sides9 = document.getElementById('side9');
 
                 let emit_name;
-                emit(2, sides2, activity_count, 'activity');
-                emit(3, sides3, activity_count, 'language');
-                emit(4, sides4, activity_count, 'sports');
-                emit(5, sides5, activity_count, 'friends');
+                emit(10, sides2, activity_count, 'activity');
+                emit(13, sides3, activity_count, 'language');
+                emit(16, sides4, activity_count, 'sports');
+                emit(18, sides5, activity_count, 'friends');
 
                 
                 
@@ -265,16 +278,17 @@ function addstory(){
                         let bonus_at = 7;
                         bonus(bonus_at);
                         function bonus(bonus_at){
-                          if(counter >= bonus_at) {
+                          if(counter >= bonus_at) { //or greater and equal to
                             counting += 10; //or make it random
                           }
                         }
  
                       }}, emit_name);
-                      wrapper.appendChild(addbtn);
+                      right_sidebar.appendChild(addbtn);
                     }    
                   }
                 }
+                
                 
                   
                 
@@ -452,7 +466,7 @@ function switchSelected(event){
 
 setState(
     JSON.parse(localStorage.getItem("Names")) ||  //it works if I take this out
-    {profiles: {"Woo":"given name"}, selected: "Woo"}
+    {profiles: {" ":"given name"}, selected: " "}
 );
 
 
