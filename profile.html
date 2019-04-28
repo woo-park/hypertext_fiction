@@ -6,7 +6,7 @@
     <style media="screen">
      *{margin:0;
        box-sizing:border-box;
-       margin-left:.2em;
+       /* margin-left:.2em; */
        /* box-sizing didn't do anything so check again */
      }
       /* .border_box{
@@ -20,7 +20,7 @@
         /* align-items:center; */
         margin:auto;
         justify-content:center;
-        width:800px;
+        width:max-content;
         /* text-align: center; */
         height:20px;
         /* border:1px dashed slategrey; */
@@ -36,13 +36,15 @@
         
       }
       body{
-        transition: all 300ms ease-in-out;
+        transition: all 800ms ease-in-out;
       }
       #collectbtn{
+        position:relative;
         width:60px;
       }
       .textwidth{
-        width:max-content;
+        /* width:max-content; */
+        
         
         /* display:inline-block; */
       }
@@ -69,35 +71,61 @@
 
       /* creating grid */
       #wrapper {
+        /* position: relative; */
         display:grid;
         height:100vh;        
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows:1fr;
         /* grid-auto-columns:1fr; */
         /* grid-auto-rows:100px; */
-        
+        overflow:hidden;
       }
-
+      #username{
+        width:100%;
+        /* border:2px solid green; */
+        position:absolute;
+        top: -5rem;
+        left:150%;
+        /* margin-left:-180px; */
+      
+      }
       #left_sidebar{
+        width:100%;
+        /* position: fixed; */
         display:flex;
         flex-flow: column;
         margin:0;
-        justify-content: center;
+        /* justify-content: center; */   
+         /* this was keep making thing shift down */
         align-items: center;
+        position: relative;
+        top:220px;
+
+        /* border:1px solid black; */
       }
       #right_sidebar{
+        width:100%;
         display:flex;
         flex-flow: column;
         margin:0;
-        justify-content: center;
+        /* justify-content: center; */
+        /* this was keep making thing shift down */
         align-items: center;
         /* text-align: right; */
+        position: relative;
+        top:220px;
 
+        /* border:1px solid grey; */
       }
       #centerbar{
+        width:100%;
+        
+        
         position:relative;
+        
+        top:180px;
+
         /* border:1px solid black; */
-        top:35%;
       }
       /* #centerbar > div{
         position: absolute;
@@ -111,7 +139,7 @@
       <div id="left_sidebar">
           <div id="username">
               Username : <input id="textarea" type="text"></input>
-              <button id="adduser">Add User</button>
+              <button id="adduser">Add Player</button>
               <br><textarea style='display:none' id="description" width="100"></textarea>
           </div>
 

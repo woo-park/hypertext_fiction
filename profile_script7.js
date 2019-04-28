@@ -26,7 +26,7 @@ let sides = document.getElementById('side');
 
 
 let add_button = document.getElementById('adduser');
-let username = document.getElementById('username');
+// let username = document.getElementById('username');
 
 let sides2 = document.getElementById('side2');
 let activity_count = 0;
@@ -34,11 +34,24 @@ let activity_count = 0;
 let right_sidebar = document.getElementById('right_sidebar');
 let left_sidebar = document.getElementById('left_sidebar');
 
+//right sides
+let sides3 = document.getElementById('side3');
+let sides4 = document.getElementById('side4');
+let sides5 = document.getElementById('side5');
+let sides6 = document.getElementById('side6');// not used at the moment
+let sides7 = document.getElementById('side7');
+let sides8 = document.getElementById('side8');
+let sides9 = document.getElementById('side9');
+
+let emit_name;
+
+
 function hideUser(){
   add_button.addEventListener('click',() => {
     username.style.display = 'none';
   })
 }
+
 
 hideUser();
 
@@ -95,9 +108,9 @@ function setState(newState) {
   //   main.appendChild(username);
   // }
     main.textContent = "";
-    let username = document.createElement('p');
-    username.textContent = newState.selected;
-    main.appendChild(username);
+    let userid = document.createElement('p');
+    userid.textContent = newState.selected;
+    main.appendChild(userid);
 
     des_note.value = newState.profiles[newState.selected];
     note.value = newState.selected;
@@ -140,7 +153,7 @@ function createTimer(duration, display){
 
             if(!error) {
                 seconds = seconds < 10 ? "0" + seconds : seconds;
-                --duration < 0 ? (duration = Math.floor(Math.random()*4), waited = true,bar.style.width = seconds * 10 +"px") : (duration, waited = false, bar.style.width = seconds * 10 +"px");
+                --duration < 0 ? (duration = Math.floor(Math.random()*3), waited = true,bar.style.width = seconds * 10 +"px") : (duration, waited = false, bar.style.width = seconds * 10 +"px");
                 display.textContent = seconds + " seconds left";
 
                 resolve(waited);
@@ -161,6 +174,7 @@ function blink(){
     if(ticks <= 9) {ticks++;} // console.log('ticks',ticks);
     collect.style.boxSizing = `border-box`;
     collect.style.border = '0px dashed black';
+    // collect.style.margin = '-10px';
     
     if(ticks%2){
       collect.style.boxSizing = `border-box`;
@@ -179,17 +193,32 @@ function addstory(){
 
         collect.removeEventListener('click', addon);
         let target = event.target;
-        story_box.insertBefore(elt('div',{class:'box'}, eval(story_one[counter])),story_box.firstChild);
-        target.addEventListener('click',()=>{
+        story_box.insertBefore(elt('div', {class:'box'}, eval(story_one[counter])),story_box.firstChild);
+        target.addEventListener('click', () => {
 
+            
             event.stopPropagation();
 
             if(waited){
+                function shift () {
+                  let random_pos = Math.floor(Math.random()* 120 - 60);
+                  collect.style.left = `${random_pos}px`;
+                }
+                shift();
+              
+
+                emit(10, sides2, activity_count, 'activity');
+                emit(13, sides3, activity_count, 'language');
+                emit(16, sides4, activity_count, 'sports');
+                emit(18, sides5, activity_count, 'friends');
+
+                waited = false; // working but you can still hack it i guess
+                
                 let bgColor = document.getElementById('bgColor');
                 Promise.resolve(
-                    setTimeout(()=>{bgColor.style.backgroundColor = 'black';},100)
+                    setTimeout(()=>{bgColor.style.backgroundColor = 'black';},10)
                 ).then(
-                    setTimeout(()=>{bgColor.style.backgroundColor = 'white';},500)
+                    setTimeout(()=>{bgColor.style.backgroundColor = 'white';},1000)
                 );
 
                 // clearInterval(ticking);
@@ -213,10 +242,29 @@ function addstory(){
                 //     console.log('yes last child is new btn');
                 //   }
                 // }
+                let question_list = [
+                  'where are you from',
+                  'where do you belong?',
+                  'where do you live?',
+                  'where is your home?',
+                  'where are you going?',
+                  'where will you go?',
+                  'when are you leaving?',
+                  'why are you here?',
+                  'who are you?',
+                  'where do you want to live?',
+                  'why are you here?',
+                  'what is your nationality?'
+                ];
+
+                console.log(question_list[6]);
+                let random_generator = Math.floor(Math.random() * question_list.length);
+                console.log('random#####', random_generator); // use this to pull random question each time
+
                 randomPopups();
                 function randomPopups() {
                   if (counter > 7){
-                    left_sidebar.appendChild(elt('div',{class:'textwidth'}, 'where are you from?'));
+                    left_sidebar.appendChild(elt('div',{class:'textwidth'}, `${question_list[random_generator]}`));
 
                     // story_box.insertBefore(elt('div',{class:'box'}, eval(story_one[counter])),story_box.firstChild);
 
@@ -227,10 +275,15 @@ function addstory(){
                 console.log(eval(story_one[counter]),'parsing');  //dont need this because i used eval() instead
                 console.log('current counter is',counter);         // for ex, you can create another btn- that leads to this second array
                 // if(counter >= 3 && counter <= 4) {  
-                if(counter >= 63 && counter <= 64) {                               //can swap into diff array like this
-                    story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_two[counter-63])),story_box.firstChild);  //bc counter is 3 and need to target array[0]
+                if(counter >= 65) {                               //can swap into diff array like this
+                    setTimeout(() => {
+                      story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_two[counter-65])),story_box.firstChild);  //bc counter is 3 and need to target array[0]
+                    }, 800);
                 } else {   //put more than one class, create class, give property to class, change opacity according to the counter
-                    story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_one[counter])),story_box.firstChild);
+                    setTimeout(() => {
+                      story_box.insertBefore(elt('div',{class:'box textwidth'},eval(story_one[counter])),story_box.firstChild);
+                    }, 800);
+                    
                 }
                  // function emit(){
                 //   if(counter == 2) {
@@ -245,20 +298,8 @@ function addstory(){
                 //   }
                 // }
 
-                let sides3 = document.getElementById('side3');
-                let sides4 = document.getElementById('side4');
-                let sides5 = document.getElementById('side5');
-                let sides6 = document.getElementById('side6');// not used at the moment
-                let sides7 = document.getElementById('side7');
-                let sides8 = document.getElementById('side8');
-                let sides9 = document.getElementById('side9');
-
-                let emit_name;
-                emit(10, sides2, activity_count, 'activity');
-                emit(13, sides3, activity_count, 'language');
-                emit(16, sides4, activity_count, 'sports');
-                emit(18, sides5, activity_count, 'friends');
-
+                
+                
                 
                 
                 function emit(emit_number, holder, counting, emit_name) {
@@ -269,19 +310,22 @@ function addstory(){
                       addbtn = elt2('a', {onclick: () => {
                         bgBlack(addbtn);
                         
-                        if(waited == true){counting ++;
+                        if(waited == true){
+
+                          counting ++;
                           console.log('WAITED AND ON CLICKKKK');
                           holder.textContent = `${emit_name} : ${counting}`;
                           bgBlack(holder);
+                          waited = false;
                         }
                         
-                        let bonus_at = 7;
-                        bonus(bonus_at);
-                        function bonus(bonus_at){
-                          if(counter >= bonus_at) { //or greater and equal to
-                            counting += 10; //or make it random
-                          }
-                        }
+                        // let bonus_at = 7;
+                        // bonus(bonus_at);
+                        // function bonus(bonus_at){
+                        //   if(counter >= bonus_at) { //or greater and equal to
+                        //     counting += 10; //or make it random
+                        //   }
+                        // }
  
                       }}, emit_name);
                       right_sidebar.appendChild(addbtn);
@@ -319,7 +363,8 @@ function addstory(){
                   let ticks = 0;
                   if(waited == true){
                     setInterval(()=>{
-                      if(ticks <= 3) {ticks++;} // console.log('ticks',ticks);
+                      if(ticks <= 3) {ticks++;} 
+                      // console.log('ticks',ticks);
                       addbtn.style.border = '0px dashed black';
                       if(ticks%2){
                           addbtn.style.border = '1px dashed black';
@@ -474,3 +519,12 @@ document.querySelector('#adduser').addEventListener('click', () => {
     // setState({profiles: Object.assign({},state.profiles,{[note.value]:des_note.value}), selected:note.value});
     setState({profiles: Object.assign({},{[note.value]:des_note.value}), selected:note.value});
 });
+
+// document.addEventListener('input', () => {
+//     console.log('code blue');
+//     console.log('code blue');
+//     console.log('code blue');
+//     console.log('code blue');
+//     console.log('code blue');
+//     console.log('code blue');
+// });

@@ -181,7 +181,7 @@
         "text" : "``"
       },{
         "id":61,
-        "text" : "`${pick} recieves an email fromm korea. he feels alive.`"
+        "text" : "`after recieving an email from korea ${pick} feels alive.`"
       },{
         "id":62,
         "text" : "`every day, after school and sports, ${pick} sees 'friends' getting picked up by the drive way`"
@@ -190,6 +190,12 @@
         "text" : "`${pick} wonders what they might do when they return home`"
       },{
         "id":64,
+        "text" : "``"
+      },{
+        "id":65,
+        "text" : "``"
+      },{
+        "id":66,
         "text" : "``"
       }
 

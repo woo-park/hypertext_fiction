@@ -31,7 +31,7 @@
         "text" :  "`lights have been off for an hour now, but the moonlight seeps in through the window.`"
       },{
         "id":11,
-        "text" :  "`closes eyse and wonder, 'why am mi here?'`"
+        "text" :  "`closes eyse and wonder, 'why am i here?'`"
       },{
         "id":12,
         "text" :  "`now it's pitch black, and memories flood into the pitch black vision.`"
@@ -43,7 +43,7 @@
         "text" :  "`it's ${pick}'s first day in the military. ${pick} just spent the first night in the training facility before getting drafted into a differnt base`"
       },{
         "id":15,
-        "text" :  "`luckily? ${pick} is placed in a room with 12 other kids. the roomms are usually filled with 20 kids.`"
+        "text" :  "`luckily? ${pick} is placed in a room with 12 other kids. the rooms are usually filled with 20 kids.`"
       },{
         "id":16,
         "text" :  "`it's the first time since 6th grade that ${pick}'s been surrounded by the Korean kids`"
