@@ -4,16 +4,34 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
+      @font-face {
+        font-family: 'GoudyStM-webfont';
+        /* src: url('GoudyStM-webfont.eot'); */
+        src: local('☺'), url('GoudyStM-webfont.woff') format('woff'), url('GoudyStM-webfont.ttf') format('truetype'), url('GoudyStM-webfont.svg') format('svg');
+        /* font-weight: 900; */
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'fanwood-webfont';
+        /* src: url('fanwood-webfont.eot'); */
+        src: local('☺'), url('fanwood-webfont.woff') format('woff'), url('fanwood-webfont.ttf') format('truetype'), url('fanwood-webfont.svg') format('svg');
+        /* font-weight: 900; */
+        font-style: normal;
+      }
+
      *{margin:0;
        box-sizing:border-box;
        /* margin-left:.2em; */
        /* box-sizing didn't do anything so check again */
+       font-family: 'GoudyStM-webfont';
+       /* font-family: 'fanwood-webfont'; */
      }
       /* .border_box{
        border:1px solid black;
        width:200px;
        height:200px;
       } */
+     
       .box{
         /* background-color:slategrey; */
         display:flex;
@@ -40,7 +58,7 @@
       }
       #collectbtn{
         position:relative;
-        width:60px;
+        width:max-content;
       }
       .textwidth{
         /* width:max-content; */
@@ -82,11 +100,14 @@
       }
       #username{
         width:100%;
-        /* border:2px solid green; */
+        display:flex;
+        justify-content: center;
+        align-items: center;
+/*      
         position:absolute;
         top: -5rem;
-        left:150%;
-        /* margin-left:-180px; */
+        left:150%; */
+   
       
       }
       #left_sidebar{
@@ -137,17 +158,18 @@
     <div class="fontColor" id="wrapper">
 
       <div id="left_sidebar">
-          <div id="username">
-              Username : <input id="textarea" type="text"></input>
-              <button id="adduser">Add Player</button>
-              <br><textarea style='display:none' id="description" width="100"></textarea>
-          </div>
+          
 
           <div class="fontColor" id="main"></div>
           <!-- name -->
       </div>
       
       <div id ="centerbar">
+          <div id="username">
+              Username : &nbsp; <input id="textarea" type="text"></input> &nbsp;
+              <button id="adduser">Add Player</button>
+              <br><textarea style='display:none' id="description" width="100"></textarea>
+          </div>
           <div id="story_box"></div>
       </div>
     

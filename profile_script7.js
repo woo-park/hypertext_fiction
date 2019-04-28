@@ -191,15 +191,18 @@ function addstory(){
     collect.style.cursor ='pointer';
     collect.addEventListener('click', addon = (event) => {
 
+      
         collect.removeEventListener('click', addon);
         let target = event.target;
         story_box.insertBefore(elt('div', {class:'box'}, eval(story_one[counter])),story_box.firstChild);
         target.addEventListener('click', () => {
+          
 
             
             event.stopPropagation();
 
             if(waited){
+              textSize();
                 function shift () {
                   let random_pos = Math.floor(Math.random()* 120 - 60);
                   collect.style.left = `${random_pos}px`;
@@ -226,7 +229,8 @@ function addstory(){
 
                 Promise.resolve(counter++).then(collectNights); // need another collectNights at the end; need both;
                 console.log('# of counter',counter);
-                  
+                
+                
                 fading();
                 disarray();
                 //hm i can create a button div and then continuosly append btn on to this div
@@ -244,27 +248,49 @@ function addstory(){
                 // }
                 let question_list = [
                   'where are you from',
+                  'where are you from',
+                  'where are you from',
+                  'where do you belong?',
+                  'where do you belong?',
                   'where do you belong?',
                   'where do you live?',
+                  'where do you live?',
+                  'where do you live?',
+                  'where is your home?',
+                  'where is your home?',
                   'where is your home?',
                   'where are you going?',
+                  'where are you going?',
+                  'where are you going?',
+                  'where will you go?',
+                  'where will you go?',
                   'where will you go?',
                   'when are you leaving?',
+                  'when are you leaving?',
+                  'why are you here?',
                   'why are you here?',
                   'who are you?',
                   'where do you want to live?',
+                  'where do you want to live?',
                   'why are you here?',
+                  'why are you here?',
+                  'what is your nationality?',
                   'what is your nationality?'
                 ];
 
-                console.log(question_list[6]);
+                // console.log(question_list[6]);
                 let random_generator = Math.floor(Math.random() * question_list.length);
                 console.log('random#####', random_generator); // use this to pull random question each time
 
                 randomPopups();
                 function randomPopups() {
-                  if (counter > 7){
+                  if (counter > 2){
                     left_sidebar.appendChild(elt('div',{class:'textwidth'}, `${question_list[random_generator]}`));
+                    // console.log(left_sidebar.lastChild,'lastchild');
+                    // for(all of left_sidebar.children){
+                    //   all.style.backgroundColor = 'white';
+                    // }
+                    // left_sidebar.firstChild.style.backgroundColor = 'blue';
 
                     // story_box.insertBefore(elt('div',{class:'box'}, eval(story_one[counter])),story_box.firstChild);
 
@@ -298,7 +324,6 @@ function addstory(){
                 //   }
                 // }
 
-                
                 
                 
                 
@@ -435,17 +460,46 @@ function elt2(type, props, ...children){
   return domtree;
 }
 
-
+// let lines;
 // story disarray
 function disarray() {
   for(let each of boxes){
     console.log('each of boxes',each);
+   
+    // if(boxes[0]) { lines = boxes[0].parentElement}
     each.style.position = 'relative';
     each.style.left = Math.random()*50 + 'px';
     each.style.marginBottom = Math.random()*20 + 'px';
   }
+
+
+
 }
 
+//let grab the parent node of .box and then start over
+  // if(story_box)console.log(story_box.childNodes[1].previousSibling,'these are lines');
+  // console.log(lines,'this is lines - parent node');
+
+function textSize() {
+  if(boxes[0]){boxes[0].style.fontSize = 1.0 + `em`;}
+  if(boxes[1]){boxes[1].style.fontSize = 0.98 + `em`;}
+  if(boxes[2]){boxes[2].style.fontSize = 0.96 + `em`;}
+  if(boxes[3]){boxes[3].style.fontSize = 0.94 + `em`;}
+  if(boxes[4]){boxes[4].style.fontSize = 0.92 + `em`;}
+  if(boxes[5]){boxes[5].style.fontSize = 0.90 + `em`;}
+  if(boxes[6]){boxes[6].style.fontSize = 0.88 + `em`;}
+  if(boxes[7]){boxes[7].style.fontSize = 0.86 + `em`;}
+  if(boxes[8]){boxes[8].style.fontSize = 0.84 + `em`;}
+  if(boxes[9]){boxes[9].style.fontSize = 0.82 + `em`;}
+  if(boxes[10]){boxes[10].style.fontSize = 0.80 + `em`;}
+  if(boxes[11]){boxes[11].style.fontSize = 0.78 + `em`;}
+  if(boxes[12]){boxes[12].style.fontSize = 0.76 + `em`;}
+  if(boxes[13]){boxes[13].style.fontSize = 0.74 + `em`;}
+  if(boxes[14]){boxes[14].style.fontSize = 0.72 + `em`;}
+  if(boxes[15]){boxes[15].style.fontSize = 0.70 + `em`;}
+
+
+}
 
 // story fading
 function fading(){
